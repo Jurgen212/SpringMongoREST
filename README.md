@@ -61,11 +61,11 @@ Project initial URL
     }
 ```
 
-**HEAD**
+**HEAD** /head/{id}
 
 - The HEAD verb in HTTP is similar to the GET verb, but instead of retrieving the response body (the data for the requested resource), it only requests the response headers.
 
-**OPTIONS**
+**OPTIONS** /optionsMateria
 
 - The OPTIONS verb in HTTP is used to request information about the communication options available to a specific resource or the server itself. When a client sends an OPTIONS request to a server, the server responds with a list of allowed HTTP methods, supported response headers, and other relevant details about the requested resource or the server in general.
 
