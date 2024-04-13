@@ -1,6 +1,7 @@
 package com.sanclemente.apimongo.service;
 
 import com.sanclemente.apimongo.model.Materia;
+import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Service;
 
 import com.sanclemente.apimongo.repository.MateriaRepository;
@@ -37,6 +38,18 @@ public class MateriaService implements IMateriaService {
 
 	public Optional<Materia> findById(String id ){
 		return materiaRepository.findById(id);
+	}
+
+	public boolean existById( String id ){
+		return materiaRepository.existsById( id );
+	}
+
+	@Override
+	public HttpHeaders optionsMateria() {
+		HttpHeaders httpHeaders = new HttpHeaders();
+		httpHeaders.add("Allow", "DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT");
+		httpHeaders.add("Access-Control-Allow-Methods", "DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT");
+		return httpHeaders;
 	}
 
 	public void deleteById( String id ){

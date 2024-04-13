@@ -1,20 +1,25 @@
 package com.sanclemente.apimongo.service;
 
 import com.sanclemente.apimongo.model.Materia;
+import org.springframework.http.HttpHeaders;
+
 import java.util.List;
 import java.util.Optional;
 
 public interface IMateriaService {
 
-    void save(Materia materia);
+    public void save(Materia materia);
 
-    Materia updateById(Materia materia);
+    public Materia updateById(Materia materia);
 
-    Materia patch(String id, Materia materia);
+    public Materia patch(String id, Materia materia);
 
-    List<Materia> findAll();
+    public List<Materia> findAll();
 
-    Optional<Materia> findById(String id);
+    public Optional<Materia> findById(String id);
 
-    void deleteById(String id);
+    public boolean existById( String id );
+
+    public HttpHeaders optionsMateria();
+    public void deleteById(String id);
 }
